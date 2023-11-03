@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="logo">
+        <img [src]="logoUrl" alt="logo">
+        <h1>{{brand}}</h1>
+    </div>
+    <div class="page">
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+            <mat-step>
+                <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmitUserInfo()">
+                    <div class="textCenter">
+                        <h1>{{welcomeHeader}}</h1>
+                        <p class="textOpacity">{{welcomeText}}</p>
+                    </div>
+                    <div class="welcome">
+                        <label for="fullName">{{fullName}}</label>
+                        <input type="text" placeholder="Steve Jobs" formControlName="fullName" class="form-control"
+                            [ngClass]="{ 'is-invalid':userInfo['fullName'].errors }">
+                        <div *ngIf="userInfo['fullName'].invalid && userInfo['fullName'].touched" class="error">
+                            {{required}}</div>
+                        <label for="displayName">{{displayName}}</label>
+                        <input type="text" placeholder="Steve" formControlName="displayName" class="form-control"
+                            [ngClass]="{ 'is-invalid': userInfo['displayName'].errors }">
+                        <div *ngIf="userInfo['displayName'].invalid && userInfo['displayName'].touched" class="error">
+                            {{required}}</div>
+                        <button mat-button matStepperNext [disabled]="firstFormGroup.invalid">{{create}}</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmitWorkspaceInfo()">
+                    <div class="textCenter">
+                        <h1>{{setupTitle}}</h1>
+                        <p class="textOpacity">{{workspaceText}}</p>
+                    </div>
+                    <div class="welcome">
+                        <label for="workspaceName">{{workspaceName}}</label>
+                        <input type="text" placeholder="Eden" id="workspaceName" formControlName="workspaceName"
+                            class="form-control" [ngClass]="{ 'is-invalid':workspacInfo['workspaceName'].errors }">
+                        <div *ngIf="workspacInfo['workspaceName'].invalid && workspacInfo[ 'workspaceName'].touched"
+                            class="error">{{required}}</div>
+                        <label for="displayName">{{workspaceUrl}}
+                            <span style="opacity: 0.35;">{{optional}}</span>
+                        </label>
+                        <input type="text" placeholder="www.eden.com/" formControlName="workspaceUrl">
+                        <button mat-button matStepperNext [disabled]="secondFormGroup.invalid">{{create}}</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+
+                <div class="textCenter">
+                    <h1>{{planTitle}}</h1>
+                    <p class="textOpacity">{{planText}}</p>
+                </div>
+                <div class="welcome card" fxLayout="column" fxLayoutGap="25px">
+                    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around left" fxLayoutGap="25px">
+                        <mat-card *ngFor="let data of workspace" fxFlex="calc(33%-25px)" fxFlex.sm="calc(50%-25px)">
+                            <div style="padding: 10px 0px 0px 10px;">
+                                <img [src]="data.icon" alt="Photo of {{data.icon}}">
+                            </div>
+                            <mat-card-header>
+                                <mat-card-title>{{data.header}}</mat-card-title>
+                                <mat-card-subtitle>{{data.text}}</mat-card-subtitle>
+                            </mat-card-header>
+                        </mat-card>
+                    </div>
+                    <button mat-button matStepperNext>{{create}}</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <div class="welcome" class="textCenter">
+                    <img src="../../assets/check-circle-solid.JPG" alt="solidcircle">
+                </div>
+                <div fxLayout="column" fxLayoutAlign="start center">
+                    <h1>{{launchTitle}}</h1>
+                    <p class="textOpacity">{{launchText}}</p>
+                </div>
+                <div class="welcome">
+                    <button mat-button matStepperPrevious>{{launchBtn}}</button>
+                </div>
+
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

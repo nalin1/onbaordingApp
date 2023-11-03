@@ -1,0 +1,21 @@
+export  enum pageText {
+    brand = 'Eden',
+    logoUrl = '../../assets/logo.JPG',
+    doneImg = '../../assets/check-circle-solid.JPG"',
+    welcomeHeader = 'Welcome! First things first...',
+    welcomeText = 'You can aways change them later.',
+    fullName = 'Full Name',
+    displayName = 'Display Name',
+    create = 'Create Workspace',
+    setupTitle = 'Let`s setup a home for all your work',
+    workspaceText = 'You can always create another workspace later.',
+    workspaceName = 'Workspace Name',
+    workspaceUrl = 'Workspace URL',
+    optional = '(optional)',
+    planTitle = 'How are you planning to use Eden?',
+    planText = 'We`ll stremline your setup accordingly.',
+    launchTitle = 'Congratulations, Eren!',
+    launchText = 'You have completed onboarding, you can start Eden!',
+    launchBtn=  'Launch Eden',
+    required=  'This field is required'
+}

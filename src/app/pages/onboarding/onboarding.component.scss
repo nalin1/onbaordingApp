@@ -1,0 +1,66 @@
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin:2rem;
+}
+    
+    .welcome{
+        display: flex;
+        justify-content: flex-end;
+        align-items: stretch;
+        flex-direction: column;
+        input{
+            padding: 15px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }  
+        button{
+            background-color:#3b0aad;
+            color: white;
+            padding: 10px 0px;
+            margin-top: 10px;
+            
+        } 
+        .error{
+            color: red;
+        }
+    }
+    .card{
+       text-align: left;
+        img{
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .textOpacity{
+        opacity: 0.5;
+    }
+    
+    .textCenter{
+        text-align: center;
+        img {
+            height: 100px;
+            width: 120px;
+        }
+    }
+    
+    // ::ng-deep .mat-stepper-horizontal-line {
+    //     border-top-width: 1px;
+    //     border-top-style: solid;
+    //     flex: auto;
+    //     height: 0;
+    //     margin: 0 -16px;
+    //     min-width: 32px;
+    //     border-top-color:#3b0aad;
+    // }
+    
+    
